@@ -9,7 +9,8 @@ class Description extends Meta {
     getAllDataByYear(year, data) {
         data || (data = this.props.allData);
 
-        return data.filter((d) => d.submit_date.getFullYear() == year);
+        // return data.filter((d) => d.submit_date.getFullYear() == year);
+        return data.filter((d) => d.submit_date == year);
     }
 
     getAllDataByUSState(USstate, data) {

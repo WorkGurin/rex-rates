@@ -33,6 +33,7 @@ class Title extends Meta {
     }
 
     render() {
+        console.log('data11', this.props.data);
         let mean = d3.mean(this.props.data, (d) => d.base_salary),
             format = this.getFormatter();
 
@@ -40,7 +41,7 @@ class Title extends Meta {
             yearsFragment = this.getYearsFragment(),
             USstateFragment = this.getUSStateFragment(),
             title;
-
+        console.log('mean', mean, format(mean), 'years', yearsFragment, 'statefrag', USstateFragment);
         if (yearsFragment && USstateFragment) {
             title = (
                 <h2>While working {USstateFragment}, React developers made ${format(mean)} {yearsFragment}</h2>

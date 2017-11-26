@@ -27,7 +27,16 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot', 'babel']},
-            {test: /\.less$/, exclude: /node_modules/, loaders: ['style', 'css', 'less']}
+            {test: /\.less$/, exclude: /node_modules/, loaders: ['style', 'css', 'less']},
+            {
+                test: /\.csv$/,
+                loader: 'csv-loader',
+                options: {
+                    dynamicTyping: true,
+                    header: true,
+                    skipEmptyLines: true
+                }
+            }
         ]
     }
 };

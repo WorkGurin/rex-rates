@@ -11,6 +11,10 @@ String.prototype.decapitalize = function () {
     return this.charAt(0).toLowerCase() + this.slice(1);
 };
 
+// ReactDOM.render(
+//     <Graph url="https://raw.githubusercontent.com/WorkGurin/rex-rates/master/public/data/data.csv" />,
+//     document.getElementById('graph'));
+
 ReactDOM.render(
-    <Graph url="https://raw.githubusercontent.com/WorkGurin/rex-rates/master/public/data/data.csv" />,
+    <Graph url='../public/data/data.csv' />,
     document.getElementById('graph'));

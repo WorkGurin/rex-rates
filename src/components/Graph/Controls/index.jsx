@@ -16,7 +16,8 @@ class Controls extends Component {
     }
 
     updateYearFilter(year, reset) {
-        let filter = (d) => d.submit_date.getFullYear() == year;
+        // let filter = (d) => d.submit_date.getFullYear() == year;
+        let filter = (d) => d.submit_date == year;
 
         if (reset || !year) {
             filter = () => true;
@@ -53,8 +54,12 @@ class Controls extends Component {
     }
   render() {
     let getYears = (data) => {
+            // return _.keys(_.groupBy(data,
+            //                         (d) => d.submit_date.getFullYear()))
+            //         .map(Number);
+
             return _.keys(_.groupBy(data,
-                                    (d) => d.submit_date.getFullYear()))
+                                    (d) => d.submit_date))
                     .map(Number);
         }
 

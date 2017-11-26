@@ -6,8 +6,11 @@ export default class Meta extends Component {
     getYears(data) {
         data || (data = this.props.data);
 
+        // return _.keys(_.groupBy(this.props.data,
+        //     (d) => d.submit_date.getFullYear())
+        // );
         return _.keys(_.groupBy(this.props.data,
-            (d) => d.submit_date.getFullYear())
+            (d) => d.submit_date)
         );
     }
 

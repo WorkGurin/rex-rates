@@ -23,15 +23,25 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     module: {
-        loaders: [{
-            test: /\.js|\.jsx$/,
-            loaders: ['babel'],
-            exclude: /node_modules/
-        },
+        loaders: [
+            {
+                test: /\.js|\.jsx$/,
+                loaders: ['babel'],
+                exclude: /node_modules/
+            },
             {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+            },
+            {
+                test: /\.csv$/,
+                loader: 'csv-loader',
+                options: {
+                    dynamicTyping: true,
+                    header: true,
+                    skipEmptyLines: true
+                }
             }
         ]
     }

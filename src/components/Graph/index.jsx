@@ -25,15 +25,19 @@ class Graph extends Component {
               return null;
           }
 
-         return {employer: d.employer,
-                      submit_date: dateFormat.parse(d['submit date']),
-                      start_date: dateFormat.parse(d['start date']),
-                      case_status: d['case status'],
-                      job_title: d['job title'],
-                      base_salary: Number(d['base salary']),
-                      salary_to: d['salary to'] ? Number(d['salary to']) : null,
-                      city: d.city,
-                      state: d.state};
+         // return {employer: d.employer,
+         //              submit_date: dateFormat.parse(d['submit date']),
+         //              start_date: dateFormat.parse(d['start date']),
+         //              case_status: d['case status'],
+         //              job_title: d['job title'],
+         //              base_salary: Number(d['base salary']),
+         //              salary_to: d['salary to'] ? Number(d['salary to']) : null,
+         //              city: d.city,
+         //              state: d.state};
+
+          return {state: d.state,
+                      submit_date: d['submit date'],
+                      base_salary: Number(d['base salary'])};
           })
           .get((error, rows) => {
               if (error) {
