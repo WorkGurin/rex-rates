@@ -19,7 +19,7 @@
   },
   "scripts": {
     "postinstall": "webpack --config ./webpack.production.config.js --progress --colors",
-    "start": "node server.js",
+    "start": "nodemon server.js -w",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gh-pages -d dist"
@@ -47,6 +47,7 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "lodash": "^3.10.1",
+    "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",

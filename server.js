@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var webpack = require('webpack');
-var config = require('./config.json');
-var app = express();
+const express = require('express');
+const path = require('path');
+const webpack = require('webpack');
+const config = require('./config.json');
+const app = express();
 
-var isDevelopment = (process.env.NODE_ENV !== 'production');
-var static_path = path.join(__dirname, config.publicFolder);
+const isDevelopment = (process.env.NODE_ENV !== 'production');
+const static_path = path.join(__dirname, config.publicFolder);
 
-var prodListener = app.use(express.static(static_path))
+const prodListener = app.use(express.static(static_path))
     .get('/', function (req, res) {
         res.sendFile('index.html', {
             root: static_path
@@ -20,8 +20,8 @@ var prodListener = app.use(express.static(static_path))
     });
 
 if (isDevelopment) {
-    var webpackDevConf = require('./webpack.config.dev');
-    var WebpackDevServer = require('webpack-dev-server');
+    const webpackDevConf = require('./webpack.config.dev');
+    const WebpackDevServer = require('webpack-dev-server');
 
     new WebpackDevServer(webpack(webpackDevConf), {
         publicPath: webpackDevConf.output.publicPath,

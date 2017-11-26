@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import d3 from 'd3';
 
 import Meta from './BaseComponent';
@@ -10,8 +10,8 @@ class Title extends Meta {
             title;
 
         if (years.length > 1) {
-            title = "";
-        }else{
+            title = '';
+        } else {
             title = `in ${years[0]}`;
         }
 
@@ -24,13 +24,14 @@ class Title extends Meta {
 
 
         if (states.length > 1) {
-            title = "";
-        }else{
+            title = '';
+        } else {
             title = `in ${StatesMap[states[0].toUpperCase()]}`;
         }
 
         return title;
     }
+
     render() {
         let mean = d3.mean(this.props.data, (d) => d.base_salary),
             format = this.getFormatter();
@@ -44,9 +45,10 @@ class Title extends Meta {
             title = (
                 <h2>While working {USstateFragment}, React developers made ${format(mean)} {yearsFragment}</h2>
             );
-        }else{
+        } else {
             title = (
-                <h2>React developers {yearsFragment.length ? "earned" : "earn"} an average salary of ${format(mean)} {USstateFragment} {yearsFragment}</h2>
+                <h2>React developers {yearsFragment.length ? 'earned' : 'earn'} an average salary of
+                    ${format(mean)} {USstateFragment} {yearsFragment}</h2>
             );
         }
 
